@@ -26,10 +26,30 @@ The waste management solution aims to optimize waste collection routes, monitor 
 The water quality management use case aims to provide real-time monitoring of water quality indicators across the city, ensuring regulatory compliance and public safety. This module will use a similar architecture, with data ingestion, storage, and exposure via Kusto DB, Power BI, and notebooks.
 
 ## Repository Structure
-- **`/src`**: Contains source code for data ingestion, transformations, and analytics.
-- **`/notebooks`**: Jupyter Notebooks used for advanced analytics and predictive modeling.
-- **`/dashboards`**: Power BI files and configurations for data visualization.
-- **`/docs`**: Documentation related to the project, including setup and user guides.
+
+Here’s an overview of the folder structure and contents created by Microsoft Fabric:
+
+- **`/AnomalyDetection.Notebook`**: Contains notebooks for detecting anomalies in the data, possibly identifying irregular patterns in waste or water quality metrics.
+  
+- **`/DataGenerationWaterQuality.Notebook`**: Notebooks for synthetic data generation related to water quality, useful for testing models and analytics.
+  
+- **`/Optimized Waste Collection Route Visualization.Notebook`**: Contains visualizations for optimizing waste collection routes based on the data insights.
+
+- **`/SilverLayer.Lakehouse` and `/bronze.Lakehouse`**: These folders contain datasets organized by Lakehouse layers. The Bronze layer stores raw data, while the Silver layer holds cleansed and transformed data.
+
+- **`/Smart City Real-Time Waste Management Dashboard`**: Includes configurations and assets for the Power BI dashboards designed for waste management use cases.
+
+- **`/images`**: Contains image assets, such as architecture diagrams, to be used in documentation.
+
+- **`/lakehouse_optimization_[unique_id]`**: Files related to optimization processes for data storage and query efficiency within the lakehouse environment.
+
+- **`/smartcitywastedata-queryset.KQLQueryset`** and **`/smartcitywasterflow-eh_queryset.KQLQueryset`**: Kusto Query Language (KQL) files that define queries for analyzing waste data.
+
+- **`/waterQuality.Report`** and **`/waterQuality.SemanticModel`**: Files related to water quality reporting and semantic models, supporting analytics and reporting functions.
+
+- **`/waterQualityKQL_queryset.KQLQueryset`**: KQL files specific to water quality queries for monitoring and analysis.
+
+This structure ensures each module is organized and directly accessible within Fabric.
 
 ## Getting Started
 1. **Prerequisites**:
