@@ -25,6 +25,9 @@ The waste management solution aims to optimize waste collection routes, monitor 
 ### 2. Water Quality Management 
 The water quality management use case aims to provide real-time monitoring of water quality indicators across the city, ensuring regulatory compliance and public safety. This module will use a similar architecture, with data ingestion, storage, and exposure via Kusto DB, Power BI, and notebooks.
 
+#### Architecture Overview
+![Water Quality Management](images/WaterQualityManagementArchecture.png)
+
 ## Repository Structure
 
 Here’s an overview of the folder structure and contents created by Microsoft Fabric:
