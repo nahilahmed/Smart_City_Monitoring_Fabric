@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "waterQuality"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0903f944-3ff5-4d26-a1a7-d22c977c063b"
+  }
+}

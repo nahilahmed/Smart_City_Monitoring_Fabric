@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLQueryset",
+    "displayName": "smartcitywasterflow-eh_queryset",
+    "description": "smartcitywasterflow-eh_queryset"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3b14a5d3-1a06-4d76-a2a7-ed07a1449557"
+  }
+}

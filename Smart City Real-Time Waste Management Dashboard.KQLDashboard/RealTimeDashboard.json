@@ -1,0 +1,215 @@
+{
+  "schema_version": "54",
+  "title": "Smart City Real-Time Waste Management Dashboard",
+  "tiles": [
+    {
+      "id": "ab28cff2-33bf-4944-8125-933ec0bd99a3",
+      "title": "Critical Alerts for Full Bins (100% Occupancy)",
+      "visualType": "table",
+      "pageId": "b8a1d2c3-ea72-4740-9595-5a61a0f0c8d6",
+      "layout": {
+        "x": 0,
+        "y": 7,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "d881f509-33ba-4f0d-800f-5be0687d68c1"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "crossFilter": [],
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    },
+    {
+      "id": "1db797af-4ff1-478e-bfb5-8bbc95233575",
+      "title": "High Occupancy Bins (>90% Occupancy)",
+      "visualType": "table",
+      "pageId": "b8a1d2c3-ea72-4740-9595-5a61a0f0c8d6",
+      "layout": {
+        "x": 9,
+        "y": 7,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "c704919b-8767-4c47-99eb-2961ce2cb6ba"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "crossFilter": [],
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    },
+    {
+      "id": "2d45ccef-d60c-487f-b47d-1b302ae3eba9",
+      "title": "Bin Status Distribution",
+      "visualType": "pie",
+      "pageId": "b8a1d2c3-ea72-4740-9595-5a61a0f0c8d6",
+      "layout": {
+        "x": 9,
+        "y": 0,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "39a385a1-22a7-4ad6-8c05-c1c771ce3d41"
+      },
+      "visualOptions": {
+        "hideLegend": true,
+        "xColumn": null,
+        "multipleYAxes": {
+          "additional": [],
+          "showMultiplePanels": false,
+          "base": {
+            "horizontalLines": [],
+            "yAxisScale": "linear",
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "columns": [],
+            "label": "",
+            "id": "-1"
+          }
+        },
+        "yColumns": null,
+        "seriesColumns": null,
+        "anomalyColumns": null,
+        "legendLocation": "bottom",
+        "crossFilter": [],
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "labelDisabled": false,
+        "pie__label": [
+          "name",
+          "percentage"
+        ],
+        "tooltipDisabled": false,
+        "pie__tooltip": [
+          "name",
+          "percentage",
+          "value"
+        ],
+        "pie__orderBy": "size",
+        "pie__kind": "pie",
+        "pie__topNSlices": null,
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "562cdfe7-d87c-4d6e-8fe4-9aa1f484cb65",
+      "title": "SF Geospatial View",
+      "visualType": "map",
+      "pageId": "b8a1d2c3-ea72-4740-9595-5a61a0f0c8d6",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "799202e7-7dee-4626-aaab-077fe63aaade"
+      },
+      "visualOptions": {
+        "map__type": "bubble",
+        "map__latitudeColumn": "latitude",
+        "map__longitudeColumn": "longitude",
+        "map__labelColumn": "status",
+        "map__sizeColumn": null,
+        "map__sizeDisabled": true,
+        "map__geoType": "numeric",
+        "map__geoPointColumn": null
+      }
+    }
+  ],
+  "baseQueries": [],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "590e1318-d297-41a3-9809-b4c363e02031",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "c2c63833-0900-4c98-bad1-7970b699311a",
+      "kind": "kusto-trident",
+      "scopeId": "kusto-trident",
+      "clusterUri": "https://trd-pkce15jwwtnekncq6t.z0.kusto.fabric.microsoft.com",
+      "database": "6ed7ffb5-84f0-4836-9d56-16a92b60f3cc",
+      "name": "smartcitywasterflow-eh",
+      "workspace": "7a02e1c3-c139-49f8-bd7e-29611cb6a201"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "id": "b8a1d2c3-ea72-4740-9595-5a61a0f0c8d6"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "c2c63833-0900-4c98-bad1-7970b699311a"
+      },
+      "text": "smartcitywastedata\n| where occupancyPercentage == 100\n| extend latitude = todouble(location.lat), longitude = todouble(location.lon)\n| project binID, latitude, longitude, wasteLevel, entryTime\n| render table with (title=\"Full Bins Requiring Immediate Attention\")",
+      "id": "d881f509-33ba-4f0d-800f-5be0687d68c1",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "c2c63833-0900-4c98-bad1-7970b699311a"
+      },
+      "text": "smartcitywastedata\n| where occupancyPercentage >= 90\n| extend latitude = todouble(location.lat), longitude = todouble(location.lon)\n| project binID, latitude, longitude, wasteLevel, capacity, occupancyPercentage, status, entryTime\n| order by occupancyPercentage desc\n| render table",
+      "id": "c704919b-8767-4c47-99eb-2961ce2cb6ba",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "c2c63833-0900-4c98-bad1-7970b699311a"
+      },
+      "text": "smartcitywastedata\n| summarize count() by status\n| order by status desc\n| render piechart with (title=\"Bin Status Distribution\")\n\n",
+      "id": "39a385a1-22a7-4ad6-8c05-c1c771ce3d41",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "c2c63833-0900-4c98-bad1-7970b699311a"
+      },
+      "text": "smartcitywastedata\n| extend latitude = todouble(location.lat), longitude = todouble(location.lon)\n| project binID, latitude, longitude, occupancyPercentage, status, entryTime",
+      "id": "799202e7-7dee-4626-aaab-077fe63aaade",
+      "usedVariables": []
+    }
+  ]
+}
