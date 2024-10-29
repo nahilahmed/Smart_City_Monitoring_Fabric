@@ -10,6 +10,9 @@ The waste management solution aims to optimize waste collection routes, monitor 
 
 #### Architecture Overview
 
+![Waste Management Architecture](images/FabricWasteManagementArchitecture.png)
+
+
 **Data Pipeline:**
 - **Data Sources**: IoT sensors in waste bins and trucks, along with city reference data (e.g., zoning and weather).
 - **Ingestion**: Data flows through pipelines and dataflows to Kusto DB for storage.
