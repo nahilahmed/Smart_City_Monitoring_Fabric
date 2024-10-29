@@ -45,9 +45,3 @@ The water quality management use case aims to provide real-time monitoring of wa
 ## Future Work
 - **Enhancements** to the waste management analytics, such as incorporating predictive models for demand forecasting.
 - **Expansion** into additional smart city use cases, starting with water quality management.
-  
-## Contributing
-We welcome contributions! Please read the [Contributing Guide](/docs/CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
