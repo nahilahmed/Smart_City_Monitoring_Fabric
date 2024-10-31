@@ -206,73 +206,61 @@ water_quality_data=json.loads(water_quality_data.to_json(orient="records"))
 
 # CELL ********************
 
-# from kafka import KafkaProducer
-# from kafka.errors import KafkaError
-# import time
-# import os
+from kafka import KafkaProducer
+from kafka.errors import KafkaError
+import time
+import os
 
-# NUM_MESSAGES=150
-# connectionString = "Endpoint=sb://esehpnbzwczb8pa5un96dt.servicebus.windows.net/;SharedAccessKeyName=key_27fa3ef7-7c13-26c4-0742-094657f3bac2;SharedAccessKey=IRwi+7yhY1QmUw+UMxyrB4tIf7Suy/oVl+AEhI8Li9E=;EntityPath=es_2549e6b5-f1cc-4118-89ae-e1430741a85e"
-# eventHubName = "es_2549e6b5-f1cc-4118-89ae-e1430741a85e"
+NUM_MESSAGES=150
+connectionString = "Endpoint=sb://esehpnbzwczb8pa5un96dt.servicebus.windows.net/;SharedAccessKeyName=key_27fa3ef7-7c13-26c4-0742-094657f3bac2;SharedAccessKey=IRwi+7yhY1QmUw+UMxyrB4tIf7Suy/oVl+AEhI8Li9E=;EntityPath=es_2549e6b5-f1cc-4118-89ae-e1430741a85e"
+eventHubName = "es_2549e6b5-f1cc-4118-89ae-e1430741a85e"
 
-# def get_properties():
-#     # Extract namespace from connection string
-#     namespace = connectionString[connectionString.index("/") + 2: connectionString.index(".")]
+def get_properties():
+    # Extract namespace from connection string
+    namespace = connectionString[connectionString.index("/") + 2: connectionString.index(".")]
     
-#     # Build the producer config properties
-#     config = {
-#         'bootstrap_servers': f"{namespace}.servicebus.windows.net:9093",
-#         'security_protocol': 'SASL_SSL',
-#         'sasl_mechanism': 'PLAIN',
-#         'sasl_plain_username': '$ConnectionString',
-#         'sasl_plain_password': connectionString,
-#         'client_id': 'KafkaExampleProducer',
-#         'key_serializer': lambda x: x.to_bytes(8, 'big'),
-#         'value_serializer': lambda x: str(x).encode('utf-8')
-#     }
-#     return config
+    # Build the producer config properties
+    config = {
+        'bootstrap_servers': f"{namespace}.servicebus.windows.net:9093",
+        'security_protocol': 'SASL_SSL',
+        'sasl_mechanism': 'PLAIN',
+        'sasl_plain_username': '$ConnectionString',
+        'sasl_plain_password': connectionString,
+        'client_id': 'KafkaExampleProducer',
+        'key_serializer': lambda x: x.to_bytes(8, 'big'),
+        'value_serializer': lambda x: str(x).encode('utf-8')
+    }
+    return config
 
-# def publish_events(producer):
-#     for i in range(NUM_MESSAGES):
-#         current_time = int(time.time() * 1000)
-#         jsonData=water_quality_data[i]
-#         jsonData['LoadDateTime']=current_time
-#         # Sending the message
-#         future = producer.send(eventHubName, key=current_time, value=jsonData)
+def publish_events(producer):
+    for i in range(NUM_MESSAGES):
+        current_time = int(time.time() * 1000)
+        jsonData=water_quality_data[i]
+        jsonData['LoadDateTime']=current_time
+        # Sending the message
+        future = producer.send(eventHubName, key=current_time, value=jsonData)
         
-#         try:
-#             record_metadata = future.get(timeout=10)
-#         except KafkaError as e:
-#             print(e)
-#             break
+        try:
+            record_metadata = future.get(timeout=10)
+        except KafkaError as e:
+            print(e)
+            break
     
-#     print(f"Sent {NUM_MESSAGES} messages")
+    print(f"Sent {NUM_MESSAGES} messages")
 
-# if __name__ == "__main__":
-# #     # Get producer properties
-#     producer_config = get_properties()
+if __name__ == "__main__":
+#     # Get producer properties
+    producer_config = get_properties()
     
-# #     # Initialize Kafka Producer
-#     producer = KafkaProducer(**producer_config)
+#     # Initialize Kafka Producer
+    producer = KafkaProducer(**producer_config)
     
-# #     # Send messages to Kafka
-#     publish_events(producer)
+#     # Send messages to Kafka
+    publish_events(producer)
     
-# #     # Close the producer
-#     producer.close()
+#     # Close the producer
+    producer.close()
 
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-df = spark.sql("SELECT * FROM bronze.bronze_waterQuality LIMIT 1000")
-display(df)
 
 # METADATA ********************
 
