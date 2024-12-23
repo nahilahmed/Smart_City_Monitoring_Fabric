@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventstream",
+    "displayName": "WaterQualityStreaming"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "272d4a88-3aac-4d7f-8beb-1b7cfbc046cc"
+  }
+}

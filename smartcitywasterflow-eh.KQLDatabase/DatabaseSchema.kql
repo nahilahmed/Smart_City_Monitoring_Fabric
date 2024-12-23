@@ -1,0 +1,5 @@
+// KQL script
+// Use management commands in this script to configure your database items, such as tables, functions, materialized views, and more.
+
+
+.create-merge table smartcitywastedata (entryTime:datetime, messageId:long, binID:long, location:dynamic, timestamp:datetime, wasteLevel:long, capacity:long, occupancyPercentage:long, status:string, EventProcessedUtcTime:datetime, PartitionId:long, EventEnqueuedUtcTime:datetime) 

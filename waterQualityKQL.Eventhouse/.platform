@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventhouse",
+    "displayName": "waterQualityKQL",
+    "description": "waterQualityKQL"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "02ffcea3-77c9-457b-96c0-e47229d9919f"
+  }
+}

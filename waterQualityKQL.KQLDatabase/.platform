@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLDatabase",
+    "displayName": "waterQualityKQL",
+    "description": "waterQualityKQL"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "dd1f517a-c08d-4582-8b5c-2d36a470dede"
+  }
+}

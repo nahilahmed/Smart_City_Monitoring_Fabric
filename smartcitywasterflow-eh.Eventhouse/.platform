@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventhouse",
+    "displayName": "smartcitywasterflow-eh",
+    "description": "smartcitywasterflow-eh"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c0de18f5-23c0-462f-bda2-b87cf28d562e"
+  }
+}
